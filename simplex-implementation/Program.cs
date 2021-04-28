@@ -21,8 +21,15 @@ namespace simplex_implementation
                 Console.WriteLine(c[i]);
             }
 
-            float[,] aa = new float[b.Length+1,c.Length];
-            for (int i = 0; i < b.Length+1; i++)
+
+
+            
+            float[,] aa = new float[b.Length,c.Length];
+            Console.WriteLine(a.Length);
+            Console.WriteLine(aa.Length);
+
+            
+            for (int i = 0; i < b.Length; i++)
             {
                 for (int j = 0; j < c.Length; j++)
                 {
@@ -31,7 +38,7 @@ namespace simplex_implementation
                 }
             }
 
-            for (int i = 0; i < b.Length+1; i++)
+            for (int i = 0; i < b.Length; i++)
             {
                 for (int j = 0; j < c.Length; j++)
                 {
@@ -40,27 +47,6 @@ namespace simplex_implementation
                 Console.WriteLine();
             }
 
-            /*
-            C_funcaoobjetiva.AddRange(c);
-            C_funcaoobjetiva.Add(0);
-
-            for (int i = 0; i < b.Length; i++)
-            {
-                for (int j = 0; j < c.Length; j++)
-                {
-                    A_restricoesFull.Add(a[i, j]);
-                }
-                A_restricoesFull.Add(b[i]);
-            }
-
-
-            
-            foreach (float dadoAfull in A_restricoesFull)
-            {
-                  Console.Write(dadoAfull);  
-            }
-            
-            */
         }
     }
 }

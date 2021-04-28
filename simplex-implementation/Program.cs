@@ -9,18 +9,23 @@ namespace simplex_implementation
         {
             float[] c = new float[] { 3, 5, 0, 0, 0 };
             float[] b = new float[] {10, 20, 30};
-            float[,] a = new float[,] { { 2, 4, 1, 0, 0 }, { 6, 1, 0, 1, 0 }, { 1, -1, 0, 0, 1 } };
+            float[,] a = new float[,] {{ 2, 4, 1, 0, 0 }, 
+                                       { 6, 1, 0, 1, 0 }, 
+                                       { 1, -1, 0, 0, 1 }};
 
 
+            
+            Array.Resize(ref c, c.Length + 1);
+            c[c.Length-1] = 0;
 
-            List<float> C_funcaoobjetiva = new List<float>();
-            List<float> A_restricoes = new List<float>();
-            List<float> B_restricoes = new List<float>();
-
-            List<float> A_restricoesFull = new List<float>();
-
+            for (int i = 0; i < c.Length; i++)
+            {
+                Console.WriteLine(c[i]);
+            }
 
 
+          
+            /*
             C_funcaoobjetiva.AddRange(c);
             C_funcaoobjetiva.Add(0);
 
@@ -40,7 +45,7 @@ namespace simplex_implementation
                   Console.Write(dadoAfull);  
             }
             
-
+            */
         }
     }
 }

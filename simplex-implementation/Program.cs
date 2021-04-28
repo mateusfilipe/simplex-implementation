@@ -6,7 +6,7 @@ namespace simplex_implementation
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // Que comecem os jogos !!
         }
     }
 }

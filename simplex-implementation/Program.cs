@@ -12,8 +12,6 @@ namespace simplex_implementation
             float[,] a = new float[,] {{ 2, 4, 1, 0, 0 }, 
                                        { 6, 1, 0, 1, 0 }, 
                                        { 1, -1, 0, 0, 1 }};
-
-
             
             Array.Resize(ref c, c.Length + 1);
             c[c.Length-1] = 0;
@@ -23,8 +21,25 @@ namespace simplex_implementation
                 Console.WriteLine(c[i]);
             }
 
+            float[,] aa = new float[b.Length+1,c.Length];
+            for (int i = 0; i < b.Length+1; i++)
+            {
+                for (int j = 0; j < c.Length; j++)
+                {
+                    Console.WriteLine(i+" "+j+" "+aa.Length);
+                    aa[i, j] = 0;
+                }
+            }
 
-          
+            for (int i = 0; i < b.Length+1; i++)
+            {
+                for (int j = 0; j < c.Length; j++)
+                {
+                    Console.Write(aa[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+
             /*
             C_funcaoobjetiva.AddRange(c);
             C_funcaoobjetiva.Add(0);

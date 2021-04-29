@@ -57,19 +57,43 @@ namespace simplex_implementation
             }
 
             float elementoPivo = matrizInicial[1, colunaMenor];
-            float linhaPivo = 1;
+            int linhaPivo = 1;
             for (int i = 1; i < b.Length + 1; i++)
             {
                 float razao = (matrizInicial[i, c.Length - 1] / matrizInicial[i, colunaMenor]);
                 if (razao >=  0 && razao < elementoPivo)
                 {
-                    elementoPivo = razao;
+                    elementoPivo = matrizInicial[i, colunaMenor];
                     linhaPivo = i;
                 }
             }
 
-            Console.WriteLine(elementoPivo + " " + linhaPivo);
+            Console.WriteLine("Pivô: "+elementoPivo + " Linha:" + linhaPivo);
 
+
+            //Matriz Inicial Alterada, divisão para encontrar pivô
+            float[,] matrizAuxiliar = new float[b.Length + 1, c.Length];
+
+            for (int j = 0; j < c.Length; j++)
+            {
+                matrizAuxiliar[0, j] = 0 - c[j];
+            }
+
+            for (int j = 0; j < c.Length; j++)
+            {
+                matrizInicial[linhaPivo, j] = matrizInicial[linhaPivo, j] / elementoPivo;
+            }
+
+            matrizAuxiliar = (float[,])matrizInicial.Clone();
+            Console.WriteLine("Matriz Auxiliar:");
+            for (int i = 0; i < b.Length + 1; i++)
+            {
+                for (int j = 0; j < c.Length; j++)
+                {
+                    Console.Write(matrizAuxiliar[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
         }
     }
 }

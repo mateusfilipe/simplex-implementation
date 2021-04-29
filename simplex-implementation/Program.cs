@@ -25,7 +25,15 @@ namespace simplex_implementation
 
             for (int j = 0; j < b.Length; j++)
             {
-                aa[c.Length-1, j] = b[j];
+                aa[j+1, c.Length - 1] = b[j];
+            }
+
+            for (int i = 1 ; i < b.Length + 1; i++)
+            {
+                for (int j = 0 ; j < c.Length-1; j++)
+                {
+                    aa[i, j] = a[i-1,j];
+                }
             }
 
             for (int i = 0; i < b.Length+1; i++)

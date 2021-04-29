@@ -1,0 +1,13 @@
+C:\Users\T-Gamer\Documents\GitHub\simplex-implementation\simplex-implementation\bin\Debug\netcoreapp3.1\simplex-implementation.exe
+C:\Users\T-Gamer\Documents\GitHub\simplex-implementation\simplex-implementation\bin\Debug\netcoreapp3.1\simplex-implementation.deps.json
+C:\Users\T-Gamer\Documents\GitHub\simplex-implementation\simplex-implementation\bin\Debug\netcoreapp3.1\simplex-implementation.runtimeconfig.json
+C:\Users\T-Gamer\Documents\GitHub\simplex-implementation\simplex-implementation\bin\Debug\netcoreapp3.1\simplex-implementation.runtimeconfig.dev.json
+C:\Users\T-Gamer\Documents\GitHub\simplex-implementation\simplex-implementation\bin\Debug\netcoreapp3.1\simplex-implementation.dll
+C:\Users\T-Gamer\Documents\GitHub\simplex-implementation\simplex-implementation\bin\Debug\netcoreapp3.1\simplex-implementation.pdb
+C:\Users\T-Gamer\Documents\GitHub\simplex-implementation\simplex-implementation\obj\Debug\netcoreapp3.1\simplex-implementation.csprojAssemblyReference.cache
+C:\Users\T-Gamer\Documents\GitHub\simplex-implementation\simplex-implementation\obj\Debug\netcoreapp3.1\simplex-implementation.AssemblyInfoInputs.cache
+C:\Users\T-Gamer\Documents\GitHub\simplex-implementation\simplex-implementation\obj\Debug\netcoreapp3.1\simplex-implementation.AssemblyInfo.cs
+C:\Users\T-Gamer\Documents\GitHub\simplex-implementation\simplex-implementation\obj\Debug\netcoreapp3.1\simplex-implementation.csproj.CoreCompileInputs.cache
+C:\Users\T-Gamer\Documents\GitHub\simplex-implementation\simplex-implementation\obj\Debug\netcoreapp3.1\simplex-implementation.dll
+C:\Users\T-Gamer\Documents\GitHub\simplex-implementation\simplex-implementation\obj\Debug\netcoreapp3.1\simplex-implementation.pdb
+C:\Users\T-Gamer\Documents\GitHub\simplex-implementation\simplex-implementation\obj\Debug\netcoreapp3.1\simplex-implementation.genruntimeconfig.cache

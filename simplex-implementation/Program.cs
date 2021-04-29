@@ -16,29 +16,19 @@ namespace simplex_implementation
             Array.Resize(ref c, c.Length + 1);
             c[c.Length-1] = 0;
 
-            for (int i = 0; i < c.Length; i++)
+            float[,] aa = new float[b.Length+1,c.Length];
+
+            for (int j = 0; j < c.Length; j++)
             {
-                Console.WriteLine(c[i]);
+                aa[0, j] = c[j];
             }
 
-
-
-            
-            float[,] aa = new float[b.Length,c.Length];
-            Console.WriteLine(a.Length);
-            Console.WriteLine(aa.Length);
-
-            
-            for (int i = 0; i < b.Length; i++)
+            for (int j = 0; j < b.Length; j++)
             {
-                for (int j = 0; j < c.Length; j++)
-                {
-                    Console.WriteLine(i+" "+j+" "+aa.Length);
-                    aa[i, j] = 0;
-                }
+                aa[c.Length-1, j] = b[j];
             }
 
-            for (int i = 0; i < b.Length; i++)
+            for (int i = 0; i < b.Length+1; i++)
             {
                 for (int j = 0; j < c.Length; j++)
                 {

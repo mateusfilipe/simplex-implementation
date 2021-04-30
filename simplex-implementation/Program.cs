@@ -7,11 +7,21 @@ namespace simplex_implementation
     {
         static void Main(string[] args)
         {
+            
             float[] c = new float[] { 3, 5, 0, 0, 0 };
             float[] b = new float[] {10, 20, 30};
             float[,] a = new float[,] {{ 2, 4, 1, 0, 0 }, 
                                        { 6, 1, 0, 1, 0 }, 
                                        { 1, -1, 0, 0, 1 }};
+            
+
+            /*
+            float[] c = new float[] { 4, 7, 0, 0, 0 };
+            float[] b = new float[] {6, 8, 10};
+            float[,] a = new float[,] {{ 1, 0, 1, 0, 0 }, 
+                                       { 0, 1, 0, 1, 0 }, 
+                                       { 4, -2, 0, 0, 1 }};
+            */
             
             Array.Resize(ref c, c.Length + 1);
             c[c.Length-1] = 0;
@@ -58,11 +68,19 @@ namespace simplex_implementation
 
             float elementoPivo = matrizInicial[1, colunaMenor];
             int linhaPivo = 1;
+            
             for (int i = 1; i < b.Length + 1; i++)
             {
-                float razao = (matrizInicial[i, c.Length - 1] / matrizInicial[i, colunaMenor]);
+                float razao = -1;
+                if (matrizInicial[i, colunaMenor] != 0)
+                {
+                    razao = (matrizInicial[i, c.Length - 1] / matrizInicial[i, colunaMenor]);
+                }
+                Console.WriteLine("razao: "+razao);
+                Console.WriteLine("elemento pivo: "+elementoPivo);
                 if (razao >=  0 && razao < elementoPivo)
                 {
+                    Console.WriteLine("entrou aqui");
                     elementoPivo = matrizInicial[i, colunaMenor];
                     linhaPivo = i;
                 }

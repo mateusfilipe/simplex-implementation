@@ -68,7 +68,9 @@ namespace simplex_implementation
                 }
             }
 
+            Console.WriteLine();
             Console.WriteLine("Pivô: "+elementoPivo + " Linha:" + linhaPivo);
+            Console.WriteLine();
 
 
             //Matriz Inicial Alterada, divisão para encontrar pivô
@@ -85,7 +87,50 @@ namespace simplex_implementation
             }
 
             matrizAuxiliar = (float[,])matrizInicial.Clone();
+
             Console.WriteLine("Matriz Auxiliar:");
+            for (int i = 0; i < b.Length + 1; i++)
+            {
+                for (int j = 0; j < c.Length; j++)
+                {
+                    Console.Write(matrizAuxiliar[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            for (int i = 0; i < b.Length + 1; i++)
+            {
+                float multiplicadorColuna = matrizAuxiliar[i, colunaMenor];
+                if(i != linhaPivo)
+                {
+                    for (int j = 0; j < c.Length; j++)
+                    {
+                        {
+                            // Multiplicando o elemento da coluna demarcada, pela linha pivo.
+                            matrizAuxiliar[i, j] = multiplicadorColuna  * matrizInicial[linhaPivo, j]; 
+                        }
+                    }
+                }
+                
+            }
+
+            for (int i = 0; i < b.Length + 1; i++)
+            {
+                if (i != linhaPivo)
+                {
+                    for (int j = 0; j < c.Length; j++)
+                    {
+                        {
+                            // Soma da linha da matriz antiga com o resultado obtido anteriormente
+                            matrizAuxiliar[i, j] = matrizInicial[i,j] - matrizAuxiliar[i, j];
+                        }
+                    }
+                }
+
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Nova Matriz Auxiliar:");
             for (int i = 0; i < b.Length + 1; i++)
             {
                 for (int j = 0; j < c.Length; j++)

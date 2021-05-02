@@ -7,9 +7,3 @@
 **Software Utilizado: VisualStudio, Octave**
 
 <a href="https://github.com/mateusfilipe/simplex-implementation/blob/main/TO_SIMPLEX.pdf">**Enunciado da Atividade**</a>
-
-## Navegando pelos aruivos:
- * arquivo1.cs:
-    * Explicação do arquivo1;
- * arquivo2.cs:
-    * Explicação do arquivo2;

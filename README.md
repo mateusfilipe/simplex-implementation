@@ -6,4 +6,6 @@
 
 **Software Utilizado: VisualStudio**
 
+**Código Principal: <a href="https://github.com/mateusfilipe/simplex-implementation/blob/main/simplex-implementation/Program.cs">Program.cs</a>**
+
 <a href="https://github.com/mateusfilipe/simplex-implementation/blob/main/TO_SIMPLEX.pdf">**Enunciado da Atividade**</a>

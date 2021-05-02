@@ -9,17 +9,17 @@ namespace simplex_implementation
         static void Main(string[] args)
         {
 
-            float[] c = new float[] { 4, 5, 9, 11, 0, 0, 0};
-            float[] b = new float[] { 15, 120, 100 };
-            float[,] a = new float[,] {{ 1, 1, 1, 1, 1, 0, 0 },
-                                       { 7, 5, 3, 2, 0, 1, 0 },
-                                       { 3, 5, 10, 15, 0, 0, 1}};
+            float[] c = new float[] { 3, 5, 0, 0, 0 };
+            float[] b = new float[] { 10, 20, 30 };
+            float[,] a = new float[,] {{ 2, 4, 1, 0, 0 },
+                                       { 6, 1, 0, 1, 0 },
+                                       { 1, -1, 0, 0, 1 }};
 
-            //float[] c = new float[] { 3, 5, 0, 0, 0 };
-            //float[] b = new float[] { 10, 20, 30 };
-            //float[,] a = new float[,] {{ 2, 4, 1, 0, 0 },
-            //                           { 6, 1, 0, 1, 0 },
-            //                           { 1, -1, 0, 0, 1 }};
+            //float[] c = new float[] { 4, 5, 9, 11, 0, 0, 0};
+            //float[] b = new float[] { 15, 120, 100 };
+            //float[,] a = new float[,] {{ 1, 1, 1, 1, 1, 0, 0 },
+            //                           { 7, 5, 3, 2, 0, 1, 0 },
+            //                           { 3, 5, 10, 15, 0, 0, 1}};
 
             //float[] c = new float[] { 4, 7, 0, 0, 0 };
             //float[] b = new float[] { 6, 8, 10 };
@@ -50,6 +50,7 @@ namespace simplex_implementation
                 }
             }
 
+            Console.WriteLine("Tabela Inicial:\n");
             for (int i = 0; i < b.Length+1; i++)
             {
                 for (int j = 0; j < c.Length; j++)
@@ -63,7 +64,7 @@ namespace simplex_implementation
             bool containsNegative = true;
             while (containsNegative)
             {
-                Console.WriteLine("Interação número: " + interacoes);
+                Console.WriteLine("\nInteração número: " + interacoes);
                 //Agrupamento dos dados concluidos e matriz inicial armazenadas
                 float menor = matrizInicial[0, 0];
                 int colunaMenor = 0;
@@ -91,14 +92,8 @@ namespace simplex_implementation
                     if(razao < menorRazao && razao > 0)
                     {
                         menorRazao = razao;
-                        Console.WriteLine("Menor Razao: " + menorRazao);
-
-
-                        Console.WriteLine("Razao: " + razao);
-                        Console.WriteLine("Pivô: " + elementoPivo);
                         if (menorRazao > 0)
                         {
-                            Console.WriteLine("entrou aqui");
                             elementoPivo = matrizInicial[i, colunaMenor];
                             linhaPivo = i;
                         }
@@ -106,7 +101,7 @@ namespace simplex_implementation
                 }
 
                 Console.WriteLine();
-                Console.WriteLine("Pivô: " + elementoPivo + " Linha:" + linhaPivo);
+                Console.WriteLine("Pivô: " + elementoPivo);
                 Console.WriteLine();
 
 
@@ -125,7 +120,7 @@ namespace simplex_implementation
 
                 matrizAuxiliar = (float[,])matrizInicial.Clone();
 
-                Console.WriteLine("Matriz Auxiliar:");
+                Console.WriteLine("Tabela Auxiliar:\n");
                 for (int i = 0; i < b.Length + 1; i++)
                 {
                     for (int j = 0; j < c.Length; j++)
@@ -167,7 +162,7 @@ namespace simplex_implementation
                 }
 
                 Console.WriteLine();
-                Console.WriteLine("Nova Matriz Auxiliar:");
+                Console.WriteLine("Nova Tabela Auxiliar:\n");
                 for (int i = 0; i < b.Length + 1; i++)
                 {
                     for (int j = 0; j < c.Length; j++)
@@ -180,7 +175,6 @@ namespace simplex_implementation
                 matrizInicial = (float[,])matrizAuxiliar.Clone();
 
                 int qtdNegative = 0;
-                Console.WriteLine(containsNegative);
                 for (int i = 0; i < c.Length; i++)
                 {
                     if (matrizAuxiliar[0, i] < 0)
@@ -193,7 +187,7 @@ namespace simplex_implementation
                 {
                     containsNegative = false;
                 }
-
+                interacoes++;
             }
         }
     }
